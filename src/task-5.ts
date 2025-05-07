@@ -1,6 +1,4 @@
-type Status = "loading" | "success" | "error";
-
-function logStatus(status: Status): void {
+function logStatus(status: "loading" | "success" | "error"): void {
   if (status === "loading") {
     console.log("Loading...");
   } else if (status === "success") {
@@ -11,4 +9,3 @@ function logStatus(status: Status): void {
 }
 
 logStatus("loading");
-// logStatus("pending"); // Це викличе помилку транспіляції
