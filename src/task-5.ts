@@ -11,4 +11,3 @@ function logStatus(status: Status): void {
 }
 
 logStatus("loading");
-// logStatus("pending"); // Це викличе помилку транспіляції
