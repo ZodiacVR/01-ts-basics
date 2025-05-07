@@ -1,19 +1,23 @@
 import axios from "axios";
+import type { AxiosResponse } from "axios";
 
 interface Post {
-    userId: number,
-    id: number,
-    title: string,
-    body: string,
+  id: number;
+  title: string;
+  body: string;
 }
 
 async function fetchPosts(): Promise<Post[]> {
-  const response = await axios.get<Post[]>(
+  const response: AxiosResponse<Post[]> = await axios.get(
     'https://jsonplaceholder.typicode.com/posts'
   );
-      return response.data;
+  return response.data;
 }
 
 fetchPosts().then((posts) => {
-    console.log(posts[0].title);    
+  if (posts && posts.length > 0) {
+    console.log(posts[0].title);
+  } else {
+    console.log("No posts found.");
+  }
 });

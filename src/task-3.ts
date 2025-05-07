@@ -1,9 +1,8 @@
 const usernames: string[] = ["alice", "bob", "charlie"];
-
 const ratings: number[] = [4.5, 3.8, 5];
 
 interface Product {
-  readonly id: number;
+  id: number;
   title: string;
 }
 

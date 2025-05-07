@@ -1,15 +1,13 @@
-function getFirstElement<T>(arr: T[]): T {
+function getFirstElement<T>(arr: T[]): T | undefined {
   return arr[0];
 }
 
+const lastNumber = getFirstElement<number>([1, 2, 3]);
+const lastString = getFirstElement<string>(["a", "b", "c"]);
+const lastBoolean = getFirstElement<boolean>([true, false, true]);
 
-getFirstElement<number>([1, 2, 3]);           // 1
-getFirstElement<string>(["a", "b", "c"]);     // "a"
-getFirstElement<boolean>([true, false, true]); // true
+console.log(lastNumber);
+console.log(lastString);
+console.log(lastBoolean);
 
-console.log(getFirstElement<number>([1, 2, 3]));
-console.log(getFirstElement<string>(["a", "b", "c"]));
-console.log(getFirstElement<boolean>([true, false, true]));
-
-
-
+// getFirstElement([1, "a"]); // Це викличе помилку, якщо ввімкнено strictNullChecks
